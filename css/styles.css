@@ -1669,7 +1669,8 @@ a.contact-card:hover {
   color: var(--c-terracotta);
 }
 
-.size-btn.is-selected {
+.size-btn.is-selected,
+.size-btn.is-selected:hover:not(:disabled) {
   background: var(--c-terracotta);
   border-color: var(--c-terracotta);
   color: var(--c-cream-soft);

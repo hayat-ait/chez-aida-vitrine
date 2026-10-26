@@ -188,7 +188,7 @@ Le site est **déjà en ligne** sur Netlify :
 
 - URL : **<https://chez-aida.netlify.app>**
 - Projet Netlify : `chez-aida`
-- Dépôt GitHub connecté : `hayat-ait/chez-aida-vitrine` (branche `main`)
+- Dépôt GitHub connecté : `hayat-ait/chez-aida-vitrine` (branche `main`, dépôt public)
 
 ### Mettre à jour le site (déploiement automatique)
 

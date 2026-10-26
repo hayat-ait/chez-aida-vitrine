@@ -71,86 +71,116 @@ jour dans `data/shop.js`.
 
 ---
 
-## 3. Gérer les produits
+## 3. Gérer les produits et les stocks (Excel)
 
-Fichier : `data/products.js`
+Le catalogue est géré dans **`catalogue.xlsx`**. C'est la source de vérité :
+**Netlify régénère automatiquement `data/products.js` à partir de ce fichier**
+à chaque déploiement.
 
-Catégories disponibles :
+> ⚠️ Ne modifie pas `data/products.js` à la main : il est écrasé à chaque build.
 
-- **Babouches** (toutes)
-- **Babouches femme** / **Babouches homme** / **Babouches enfant**
-- **Ceintures**, **Sacs**, **Poufs**, **Accessoires**
+### Mettre à jour un stock (le plus courant)
 
-Les babouches portent un champ `audience` (`femme`, `homme` ou `enfant`) qui alimente
-les sous-catégories.
-
-Chaque produit est un bloc :
-
-```js
-{
-  id: "sac-004",                         // identifiant unique, sans espace
-  name: { fr: "Nom en français", en: "English name" },
-  description: { fr: "Texte FR", en: "English text" },
-  price: 450,                            // prix en MAD (nombre)
-  category: "sacs",                      // babouches | ceintures | sacs | poufs | accessoires
-  audience: "femme",                     // uniquement pour les babouches : femme | homme | enfant
-  images: ["assets/img/products/sac-004.jpg"],
-  color: { fr: "Marron", en: "Brown", hex: "#6B4423" },
-  sizes: [{ size: "one", stock: 5 }],    // ou des tailles réelles : "38", "90 cm"…
-  oneSize: true,                         // true pour les articles sans taille
-  featured: true                         // mis en avant dans le tri par défaut
-}
-```
-
-Règles utiles :
-
-- **Prix** : nombre seul (`450`, pas `"450 MAD"`), la devise vient de `SHOP.currency`.
-- **Stock** : `0` affiche automatiquement la taille comme épuisée et le produit
-  comme « Rupture » s'il n'y a plus aucune taille. Un stock total de 1 à 3 affiche
-  « Stock limité ».
-- **Articles sans taille** (sacs, poufs, portefeuilles…) : utiliser
-  `sizes: [{ size: "one", stock: N }]` et `oneSize: true`. L'interface affiche
-  « Taille unique » / « One size » et masque le sélecteur de taille.
-- **Ceintures** : utilisez des tailles en centimètres (`"80 cm"`, `"85 cm"`…).
-- **Ordre d'affichage** : le tri par défaut place les produits `featured: true` en premier.
-- **Exemple de rupture** : le produit `pouf-002` est volontairement à `stock: 0`
-  pour illustrer le badge « Rupture » et le filtre de disponibilité.
+1. Ouvre `catalogue.xlsx` (Excel, LibreOffice ou Google Sheets).
+2. Va dans l'onglet **Produits**.
+3. Trouve la ligne de l'article et la colonne de la taille (ex. `stock_40`).
+4. Remplace la valeur :
+   - **un nombre** = stock disponible ;
+   - **`0`** = taille proposée mais **en rupture** ;
+   - **vide** = taille **non proposée**.
+5. Enregistre le fichier.
+6. Envoie-le sur GitHub (voir « Envoyer le fichier » plus bas) → Netlify met le site à jour.
 
 ### Ajouter un produit
 
-1. Ajouter la (les) photo(s) dans `assets/img/products/`.
-2. Copier un bloc `{ ... }` existant, changer l'`id` et les informations.
-3. Enregistrer, puis rafraîchir le site.
+1. Ajoute une ligne dans l'onglet **Produits**.
+2. Renseigne au minimum : `id`, `nom_fr`, `prix_mad`, `categorie`, `image_1`.
+3. Choisis un `id` unique, en minuscules avec tirets (ex. `bab-013`, `sac-004`).
+4. Remplis les colonnes de stock selon la catégorie :
+   - **Babouches** : `stock_24` à `stock_45` ;
+   - **Ceintures** : `stock_75cm` à `stock_105cm` ;
+   - **Sacs, poufs, accessoires** : `taille_unique = OUI` et `stock_unique`.
+5. Mets `mise_en_avant = OUI` si tu veux le voir en premier.
+6. Enregistre et envoie le fichier sur GitHub.
 
-### Supprimer un produit
+### Colonnes importantes
 
-Supprimer son bloc `{ ... }` (attention à bien garder la virgule entre les blocs).
+| Colonne | Rôle |
+|---|---|
+| `id` | Identifiant unique (ex. `bab-013`) |
+| `nom_fr` / `nom_en` | Nom en français / anglais (l'anglais est optionnel) |
+| `description_fr` / `description_en` | Description (l'anglais est optionnel) |
+| `prix_mad` | Prix en dirhams, nombre seul (ex. `250`) |
+| `categorie` | `babouches`, `ceintures`, `sacs`, `poufs`, `accessoires` |
+| `audience` | Pour les babouches uniquement : `femme`, `homme`, `enfant` |
+| `couleur_fr` / `couleur_en` / `couleur_hex` | Couleur affichée et code hex |
+| `image_1` / `image_2` | Chemin des photos dans `assets/img/products/` |
+| `taille_unique` | `OUI` pour les articles sans taille (sacs, poufs…) |
+| `mise_en_avant` | `OUI` pour le tri par défaut |
+| `stock_*` | Stock par taille (voir ci-dessus) |
+
+Règles automatiques :
+
+- Stock `0` → taille en rupture ; produit en « Rupture » si plus aucune taille.
+- Stock total 1 à 3 → badge « Stock limité ».
+- Image vide ou introuvable → visuel « Photo à venir ».
+- Une erreur dans le fichier (ID en double, prix manquant…) **bloque le build** :
+  l'ancien site reste en ligne et le journal Netlify indique la ligne à corriger.
+
+### Envoyer le fichier sur GitHub
+
+**Option A — interface GitHub (recommandé)**
+
+1. Ouvre <https://github.com/hayat-ait/chez-aida-vitrine>
+2. **Add file → Upload files**
+3. Glisse `catalogue.xlsx` (il remplace l'ancien)
+4. **Commit changes**
+5. Netlify redéploie automatiquement.
+
+**Option B — en local**
+
+```bash
+cd /home/hayat/clients/vitrine
+git add catalogue.xlsx
+git commit -m "Mise à jour du catalogue"
+git push
+```
+
+**Option C — transmets le fichier** à ton consultant : il le pousse pour toi.
+
+### Aperçu local (optionnel)
+
+```bash
+python3 -m pip install openpyxl   # une seule fois
+python3 tools/excel_to_products.py catalogue.xlsx data/products.js
+python3 -m http.server 8080
+```
+
+### Exemple de rupture
+
+Le produit `pouf-002` est volontairement à `stock_unique = 0` pour illustrer le
+badge « Rupture » et le filtre de disponibilité.
 
 ---
 
 ## 4. Remplacer les photos
 
 Les images actuelles (`assets/img/products/*.svg`) sont des **visuels d'exemple**
-générés automatiquement (une forme différente par type : babouche, ceinture, sac,
-pouf, portefeuille).
+générés automatiquement.
 
 Pour utiliser de vraies photos :
 
 1. Déposer les photos dans `assets/img/products/` (idéalement carrées, ex. 1000 × 1000 px,
    format `.jpg` ou `.webp`).
-2. Dans `data/products.js`, mettre à jour le chemin dans `images` :
-   ```js
-   images: ["assets/img/products/ma-ceinture-1.jpg"]
-   ```
-3. Plusieurs images sont possibles (la première sert de vignette) :
-   ```js
-   images: [
-     "assets/img/products/ma-ceinture-1.jpg",
-     "assets/img/products/ma-ceinture-2.jpg"
-   ]
-   ```
-   La galerie du produit affiche actuellement la première image ; la structure est
-   déjà prévue pour en ajouter d'autres.
+2. Dans `catalogue.xlsx` (onglet **Produits**), colonne **`image_1`**, indiquer le chemin :
+   `assets/img/products/ma-ceinture-1.jpg`
+3. Une deuxième photo est possible dans `image_2` :
+   `assets/img/products/ma-ceinture-2.jpg`
+   (la première sert de vignette ; la galerie affiche actuellement la première image).
+4. Envoyer `catalogue.xlsx` sur GitHub : le site se met à jour automatiquement.
+
+Si `image_1` est vide ou si le fichier est introuvable, le site affiche le visuel
+`assets/img/products/placeholder.svg` (« Photo à venir »).
 
 ---
 
@@ -239,11 +269,14 @@ vitrine/
 │   ├── i18n.js                # traductions FR/EN + gestion de langue
 │   ├── cart.js                # panier, stock, commande WhatsApp
 │   └── app.js                 # catalogue, filtres, modal, interactions
+├── catalogue.xlsx             # SOURCE : produits, prix, tailles, stock (Excel)
+├── tools/
+│   └── excel_to_products.py   # convertit l'Excel en data/products.js
 ├── data/
 │   ├── shop.js                # infos magasin (nom, WhatsApp, adresse…)
-│   └── products.js            # produits, catégories, prix, tailles, stock
-├── assets/img/products/       # photos produits (SVG d'exemple au départ)
-├── netlify.toml               # configuration d'hébergement
+│   └── products.js            # GÉNÉRÉ depuis catalogue.xlsx (ne pas éditer)
+├── assets/img/products/       # photos produits + placeholder.svg
+├── netlify.toml               # configuration d'hébergement + build
 └── README.md
 ```
 
@@ -252,8 +285,9 @@ vitrine/
 ## 9. Bonnes pratiques de mise à jour
 
 - Toujours vérifier les **prix** et les **stocks** avant de publier.
-- Quand un article est épuisé : mettre toutes ses tailles à `stock: 0`
-  (le badge « Rupture » s'affiche automatiquement).
+- Quand un article est épuisé : mettre toutes ses tailles à `0` dans `catalogue.xlsx`
+  (ou `taille_unique = OUI` + `stock_unique = 0`). Le badge « Rupture » s'affiche
+  automatiquement.
 - Éviter les photos trop lourdes : viser moins de 300 Ko par image
   (outil conseillé : <https://squoosh.app>).
 - Tester le site sur téléphone : la majorité des visiteurs viendront du mobile.

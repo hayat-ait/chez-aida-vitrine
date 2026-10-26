@@ -1,5 +1,7 @@
 # Déploiement automatique : chaque push sur main déclenche un build Netlify (GitHub App).
+# Le catalogue est régénéré depuis catalogue.xlsx à chaque build.
 [build]
+  command = "python3 -m venv /tmp/chezaida-venv && /tmp/chezaida-venv/bin/pip install --quiet openpyxl && /tmp/chezaida-venv/bin/python tools/excel_to_products.py catalogue.xlsx data/products.js"
   publish = "."
 
 [[headers]]

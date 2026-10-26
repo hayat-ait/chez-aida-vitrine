@@ -1068,6 +1068,40 @@ button {
   place-items: center;
 }
 
+.about__quote {
+  margin: 1.6rem 0 0;
+  padding: 0.2rem 0 0.2rem 1.2rem;
+  border-left: 3px solid var(--c-sand);
+}
+
+.about__quote p {
+  font-family: var(--font-display);
+  font-style: italic;
+  font-size: 1.15rem;
+  line-height: 1.5;
+  color: var(--c-terracotta);
+  margin: 0;
+}
+
+.about__quote cite {
+  display: block;
+  margin-top: 0.45rem;
+  font-family: var(--font-body);
+  font-style: normal;
+  font-size: 0.7rem;
+  font-weight: 700;
+  letter-spacing: 0.12em;
+  text-transform: uppercase;
+  color: var(--c-clay);
+}
+
+.about__actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.7rem;
+  margin-top: 1.6rem;
+}
+
 /* ---------- Contact ---------- */
 
 .contact {
@@ -1931,6 +1965,14 @@ a.contact-card:hover {
     width: 92px;
     height: 92px;
     font-size: 0.55rem;
+  }
+
+  .about__actions {
+    flex-direction: column;
+  }
+
+  .about__actions .btn {
+    width: 100%;
   }
 
   .contact-grid {

@@ -42,6 +42,8 @@ function fillShopInfo() {
   var waHref = whatsappUrl(t("whatsapp.generic", { shop: SHOP.name }));
   document.getElementById("heroWhatsapp").href = waHref;
   document.getElementById("contactWhatsapp").href = waHref;
+  var aboutWa = document.getElementById("aboutWhatsapp");
+  if (aboutWa) aboutWa.href = waHref;
   document.getElementById("whatsappValue").textContent = SHOP.phone;
 
   var phone = document.getElementById("contactPhone");

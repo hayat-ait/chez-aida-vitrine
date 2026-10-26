@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBF4E8"/>
+      <stop offset="100%" stop-color="#EBD7B9"/>
+    </linearGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#8E2F2F"/>
+      <stop offset="100%" stop-color="#581d1d"/>
+    </linearGradient>
+    <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5A3A26"/>
+      <stop offset="100%" stop-color="#33200F"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E9C68A"/>
+      <stop offset="55%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#8A6208"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <path d="M210 640 L210 360 C210 250 320 190 400 190 C480 190 590 250 590 360 L590 640 Z"
+        fill="#F7EDDD" stroke="#C89B6B" stroke-width="3" opacity="0.9"/>
+  <path d="M250 640 L250 370 C250 285 335 235 400 235 C465 235 550 285 550 370 L550 640 Z"
+        fill="none" stroke="#D9BE94" stroke-width="2" stroke-dasharray="2 12" stroke-linecap="round"/>
+
+  <g opacity="0.5" fill="#B8860B">
+    <circle cx="140" cy="220" r="4"/><circle cx="170" cy="220" r="4"/><circle cx="200" cy="220" r="4"/>
+    <circle cx="140" cy="250" r="4"/><circle cx="170" cy="250" r="4"/><circle cx="200" cy="250" r="4"/>
+    <circle cx="140" cy="280" r="4"/><circle cx="170" cy="280" r="4"/><circle cx="200" cy="280" r="4"/>
+  </g>
+
+
+  <ellipse cx="400" cy="640" rx="240" ry="34" fill="#2E1A12" opacity="0.12"/>
+  <path d="M170 575 C210 640 315 668 420 668 C525 668 625 640 662 575
+           L662 608 C625 672 525 700 420 700 C315 700 205 672 170 608 Z" fill="url(#sole)"/>
+  <path d="M168 558 C168 470 240 428 345 424 L515 418
+           C620 414 672 468 672 552 C672 604 630 636 555 640
+           C520 642 505 626 470 626 L300 630 C220 632 168 612 168 558 Z"
+        fill="url(#leather)"/>
+  <ellipse cx="440" cy="472" rx="148" ry="40" transform="rotate(-4 440 472)" fill="#2E1A12" opacity="0.42"/>
+  <ellipse cx="440" cy="466" rx="132" ry="30" transform="rotate(-4 440 466)" fill="#F7EDDD" opacity="0.16"/>
+  <path d="M215 520 C250 470 330 452 420 452 C520 452 600 482 628 528"
+        fill="none" stroke="#E9C68A" stroke-width="3" stroke-dasharray="9 9" stroke-linecap="round" opacity="0.7"/>
+  <path d="M196 560 C214 552 240 548 262 548" fill="none" stroke="#E9C68A" stroke-width="5" stroke-linecap="round" opacity="0.8"/>
+  <circle cx="205" cy="545" r="7" fill="#B8860B" opacity="0.85"/>
+
+  <text x="400" y="758" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="25" letter-spacing="8" fill="#7B3F2E" opacity="0.85">CHEZ AIDA</text>
+  <text x="400" y="784" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="11" letter-spacing="3" fill="#A9744F" opacity="0.8">VISUEL D'EXEMPLE · SAMPLE IMAGE</text>
+  <desc>bab-002</desc>
+</svg>

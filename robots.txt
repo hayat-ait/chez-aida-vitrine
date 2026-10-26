@@ -1,0 +1,4 @@
+User-agent: *
+Allow: /
+
+Sitemap: https://chez-aida.netlify.app/sitemap.xml

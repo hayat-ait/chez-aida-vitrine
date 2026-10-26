@@ -1,0 +1,54 @@
+<svg xmlns="http://www.w3.org/2000/svg" width="800" height="800" viewBox="0 0 800 800" role="img">
+  <defs>
+    <linearGradient id="bg" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#FBF4E8"/>
+      <stop offset="100%" stop-color="#EBD7B9"/>
+    </linearGradient>
+    <linearGradient id="leather" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#221C18"/>
+      <stop offset="100%" stop-color="#15110f"/>
+    </linearGradient>
+    <linearGradient id="sole" x1="0" y1="0" x2="0" y2="1">
+      <stop offset="0%" stop-color="#5A3A26"/>
+      <stop offset="100%" stop-color="#33200F"/>
+    </linearGradient>
+    <linearGradient id="metal" x1="0" y1="0" x2="1" y2="1">
+      <stop offset="0%" stop-color="#E9C68A"/>
+      <stop offset="55%" stop-color="#B8860B"/>
+      <stop offset="100%" stop-color="#8A6208"/>
+    </linearGradient>
+  </defs>
+
+  <rect width="800" height="800" fill="url(#bg)"/>
+
+  <path d="M210 640 L210 360 C210 250 320 190 400 190 C480 190 590 250 590 360 L590 640 Z"
+        fill="#F7EDDD" stroke="#C89B6B" stroke-width="3" opacity="0.9"/>
+  <path d="M250 640 L250 370 C250 285 335 235 400 235 C465 235 550 285 550 370 L550 640 Z"
+        fill="none" stroke="#D9BE94" stroke-width="2" stroke-dasharray="2 12" stroke-linecap="round"/>
+
+  <g opacity="0.5" fill="#B8860B">
+    <circle cx="140" cy="220" r="4"/><circle cx="170" cy="220" r="4"/><circle cx="200" cy="220" r="4"/>
+    <circle cx="140" cy="250" r="4"/><circle cx="170" cy="250" r="4"/><circle cx="200" cy="250" r="4"/>
+    <circle cx="140" cy="280" r="4"/><circle cx="170" cy="280" r="4"/><circle cx="200" cy="280" r="4"/>
+  </g>
+
+
+  <ellipse cx="400" cy="590" rx="270" ry="30" fill="#2E1A12" opacity="0.1"/>
+  <path d="M150 420 C150 385 175 365 215 365 L600 365 C640 365 665 385 665 420
+           L665 500 C665 535 640 555 600 555 L215 555 C175 555 150 535 150 500 Z"
+        fill="url(#leather)"/>
+  <path d="M175 398 L640 398" stroke="#E9C68A" stroke-width="3" stroke-dasharray="8 8" opacity="0.65"/>
+  <path d="M175 522 L640 522" stroke="#E9C68A" stroke-width="3" stroke-dasharray="8 8" opacity="0.65"/>
+  <circle cx="250" cy="460" r="9" fill="#2E1A12" opacity="0.5"/>
+  <circle cx="310" cy="460" r="9" fill="#2E1A12" opacity="0.5"/>
+  <circle cx="370" cy="460" r="9" fill="#2E1A12" opacity="0.5"/>
+  <circle cx="430" cy="460" r="9" fill="#2E1A12" opacity="0.5"/>
+  <rect x="590" y="332" width="132" height="256" rx="24" fill="none" stroke="url(#metal)" stroke-width="16"/>
+  <line x1="655" y1="378" x2="655" y2="542" stroke="url(#metal)" stroke-width="10" stroke-linecap="round"/>
+
+  <text x="400" y="758" text-anchor="middle" font-family="Georgia, 'Times New Roman', serif"
+        font-size="25" letter-spacing="8" fill="#7B3F2E" opacity="0.85">CHEZ AIDA</text>
+  <text x="400" y="784" text-anchor="middle" font-family="Arial, sans-serif"
+        font-size="11" letter-spacing="3" fill="#A9744F" opacity="0.8">VISUEL D'EXEMPLE · SAMPLE IMAGE</text>
+  <desc>cei-003</desc>
+</svg>

@@ -1,0 +1,385 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Chez Aida — Maroquinerie marocaine à Casablanca</title>
+  <meta name="description" content="Babouches, ceintures, sacs et poufs en cuir sélectionnés à Fès. Depuis plus de 30 ans dans l'ancienne médina de Casablanca. Commande simple sur WhatsApp.">
+  <meta name="theme-color" content="#7B3F2E">
+  <meta name="author" content="Chez Aida">
+  <link rel="canonical" href="https://chez-aida.netlify.app/">
+
+  <meta property="og:type" content="website">
+  <meta property="og:url" content="https://chez-aida.netlify.app/">
+  <meta property="og:title" content="Chez Aida — Maroquinerie marocaine à Casablanca">
+  <meta property="og:description" content="Babouches, ceintures, sacs et poufs en cuir sélectionnés à Fès. Plus de 30 ans d'expertise dans l'ancienne médina de Casablanca.">
+  <meta property="og:image" content="assets/img/products/bab-001.svg">
+  <meta property="og:locale" content="fr_FR">
+  <meta property="og:locale:alternate" content="en_US">
+  <meta name="twitter:card" content="summary_large_image">
+
+  <link rel="icon" href="assets/img/products/bab-001.svg" type="image/svg+xml">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;0,700;1,500&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="css/styles.css">
+
+  <script type="application/ld+json">
+  {
+    "@context": "https://schema.org",
+    "@type": "Store",
+    "name": "Chez Aida",
+    "description": "Maroquinerie marocaine : babouches, ceintures, sacs, poufs et accessoires en cuir sélectionnés à Fès.",
+    "image": "assets/img/products/bab-001.svg",
+    "telephone": "+212 6 11 55 98 41",
+    "address": {
+      "@type": "PostalAddress",
+      "streetAddress": "Ancienne Médina, Rue Fendek",
+      "addressLocality": "Casablanca",
+      "addressCountry": "MA"
+    },
+    "openingHours": "Mo-Sa 09:00-20:00",
+    "priceRange": "80-900 MAD"
+  }
+  </script>
+</head>
+<body>
+  <a class="skip-link" href="#catalogue">Aller au catalogue</a>
+
+  <div class="announce">
+    <div class="container announce__inner">
+      <span data-i18n="contact.delivery"></span>
+    </div>
+  </div>
+
+  <header class="site-header" id="top">
+    <div class="container header__inner">
+      <a class="brand" href="#top" aria-label="Chez Aida">
+        <span class="brand__mark" aria-hidden="true">
+          <svg viewBox="0 0 32 32" width="30" height="30" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+            <path d="M4 26V15a12 12 0 0 1 24 0v11"/>
+            <path d="M10 26v-9a6 6 0 0 1 12 0v9"/>
+            <path d="M2 26h28"/>
+          </svg>
+        </span>
+        <span class="brand__name" id="brandName">Chez Aida</span>
+      </a>
+
+      <nav class="main-nav" id="mainNav" aria-label="Navigation principale">
+        <a href="#catalogue" data-i18n="nav.catalog"></a>
+        <a href="#a-propos" data-i18n="nav.about"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+      </nav>
+
+      <div class="header__actions">
+        <div class="lang-switch" role="group" aria-label="Changer de langue" data-i18n-aria-label="nav.lang">
+          <button type="button" class="lang-btn is-active" data-lang="fr" aria-pressed="true">FR</button>
+          <span class="lang-switch__sep" aria-hidden="true">/</span>
+          <button type="button" class="lang-btn" data-lang="en" aria-pressed="false">EN</button>
+        </div>
+
+        <button type="button" class="cart-btn" id="cartButton" data-open-cart aria-label="Panier" data-i18n-aria-label="nav.cart">
+          <svg viewBox="0 0 24 24" width="21" height="21" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+            <path d="M4 9h16l-1.5 10.5a1.5 1.5 0 0 1-1.5 1.3H7a1.5 1.5 0 0 1-1.5-1.3Z"/>
+            <path d="M8 9 9.5 4h5L16 9"/>
+          </svg>
+          <span class="cart-btn__label" data-i18n="nav.cart"></span>
+          <span class="cart-count" id="cartCount" hidden>0</span>
+        </button>
+
+        <button type="button" class="menu-btn" id="menuToggle" aria-expanded="false" aria-controls="mainNav" aria-label="Ouvrir le menu" data-i18n-aria-label="nav.menu">
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+          <span aria-hidden="true"></span>
+        </button>
+      </div>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="container hero__inner">
+        <div class="hero__content">
+          <span class="eyebrow" data-i18n="hero.badge"></span>
+          <h1 data-i18n="hero.title"></h1>
+          <p class="hero__sub" data-i18n="hero.sub"></p>
+          <div class="hero__actions">
+            <a class="btn btn--primary" href="#catalogue">
+              <span data-i18n="hero.cta"></span>
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M5 12h14M13 6l6 6-6 6"/></svg>
+            </a>
+            <a class="btn btn--ghost" id="heroWhatsapp" href="#" target="_blank" rel="noopener">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.5-5.8c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.1 1.6 2.5 3.9 3.5 1.4.6 2 .7 2.7.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0 0-.1-.1-.3-.1Z"/></svg>
+              <span data-i18n="hero.cta2"></span>
+            </a>
+          </div>
+          <ul class="hero__stats">
+            <li><strong>30+</strong><span data-i18n="hero.stat1"></span></li>
+            <li><strong>2</strong><span data-i18n="hero.stat2"></span></li>
+            <li><strong>Fès</strong><span data-i18n="hero.stat3"></span></li>
+          </ul>
+        </div>
+        <div class="hero__visual" aria-hidden="true">
+          <div class="hero__arch">
+            <img src="assets/img/products/bab-002.svg" alt="" width="800" height="800">
+          </div>
+          <div class="hero__mini hero__mini--one">
+            <img src="assets/img/products/sac-001.svg" alt="" width="800" height="800">
+          </div>
+          <span class="hero__spark hero__spark--a"></span>
+          <span class="hero__spark hero__spark--b"></span>
+        </div>
+      </div>
+    </section>
+
+    <section class="section catalog" id="catalogue">
+      <div class="container">
+        <div class="section__head">
+          <div>
+            <span class="eyebrow" data-i18n="catalog.eyebrow"></span>
+            <h2 data-i18n="catalog.title"></h2>
+          </div>
+          <p class="section__sub" data-i18n="catalog.sub"></p>
+        </div>
+
+        <div class="catalog-bar">
+          <div class="chips" id="categoryChips" role="group" aria-label="Catégories"></div>
+
+          <div class="filters">
+            <label class="search">
+              <svg viewBox="0 0 24 24" width="18" height="18" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.5-3.5"/></svg>
+              <input type="search" id="searchInput" data-i18n-placeholder="catalog.search" placeholder="Rechercher un modèle…">
+            </label>
+
+            <label class="select-wrap">
+              <select id="sizeFilter" data-i18n-aria-label="catalog.size" aria-label="Taille"></select>
+            </label>
+
+            <label class="select-wrap">
+              <select id="availabilityFilter" data-i18n-aria-label="catalog.availability" aria-label="Disponibilité">
+                <option value="all" data-i18n="availability.all"></option>
+                <option value="in" data-i18n="availability.in"></option>
+                <option value="low" data-i18n="availability.low"></option>
+                <option value="out" data-i18n="availability.out"></option>
+              </select>
+            </label>
+
+            <label class="select-wrap">
+              <select id="sortFilter" data-i18n-aria-label="catalog.sort" aria-label="Trier">
+                <option value="featured" data-i18n="catalog.sortFeatured"></option>
+                <option value="price-asc" data-i18n="catalog.sortPriceAsc"></option>
+                <option value="price-desc" data-i18n="catalog.sortPriceDesc"></option>
+              </select>
+            </label>
+          </div>
+        </div>
+
+        <p class="results-count" id="resultsCount" aria-live="polite"></p>
+
+        <div class="product-grid" id="productGrid"></div>
+
+        <div class="empty-state" id="emptyState" hidden>
+          <h3 data-i18n="catalog.emptyTitle"></h3>
+          <p data-i18n="catalog.emptyText"></p>
+          <button type="button" class="btn btn--ghost" id="resetFilters" data-i18n="catalog.reset"></button>
+        </div>
+      </div>
+    </section>
+
+    <section class="section about" id="a-propos">
+      <div class="container about__inner">
+        <div class="about__visual" aria-hidden="true">
+          <div class="about__img about__img--one">
+            <img src="assets/img/products/bab-003.svg" alt="" loading="lazy" width="800" height="800">
+          </div>
+          <div class="about__img about__img--two">
+            <img src="assets/img/products/pouf-001.svg" alt="" loading="lazy" width="800" height="800">
+          </div>
+          <div class="about__seal">
+            <svg viewBox="0 0 24 24" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 3 14.6 9l6.4.5-4.9 4.2 1.5 6.3L12 16.6 6.4 20l1.5-6.3L3 9.5 9.4 9Z"/></svg>
+            <span data-i18n="footer.made"></span>
+          </div>
+        </div>
+
+        <div class="about__content">
+          <span class="eyebrow" data-i18n="about.eyebrow"></span>
+          <h2 data-i18n="about.title"></h2>
+          <p data-i18n="about.p1"></p>
+          <p data-i18n="about.p2"></p>
+          <p data-i18n="about.p3"></p>
+          <ul class="check-list">
+            <li data-i18n="about.point1"></li>
+            <li data-i18n="about.point2"></li>
+            <li data-i18n="about.point3"></li>
+          </ul>
+        </div>
+      </div>
+    </section>
+
+    <section class="section contact" id="contact">
+      <div class="container">
+        <div class="section__head section__head--center">
+          <div>
+            <span class="eyebrow" data-i18n="contact.eyebrow"></span>
+            <h2 data-i18n="contact.title"></h2>
+          </div>
+          <p class="section__sub" data-i18n="contact.sub"></p>
+        </div>
+
+        <div class="contact-grid" id="contactGrid">
+          <a class="contact-card contact-card--accent" id="contactWhatsapp" href="#" target="_blank" rel="noopener">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="currentColor"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.5-5.8c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.1 1.6 2.5 3.9 3.5 1.4.6 2 .7 2.7.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0 0-.1-.1-.3-.1Z"/></svg>
+            </span>
+            <span class="contact-card__label" data-i18n="contact.whatsapp"></span>
+            <span class="contact-card__value" id="whatsappValue"></span>
+          </a>
+
+          <a class="contact-card" id="contactPhone" href="#">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M6.5 3h3l1.5 4-2 1.5a13 13 0 0 0 6.5 6.5L17 13l4 1.5v3a2 2 0 0 1-2.2 2A17 17 0 0 1 4.5 5.2 2 2 0 0 1 6.5 3Z"/></svg>
+            </span>
+            <span class="contact-card__label" data-i18n="contact.phone"></span>
+            <span class="contact-card__value" id="phoneValue"></span>
+          </a>
+
+          <a class="contact-card" id="contactInstagram" href="#" target="_blank" rel="noopener">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="3" width="18" height="18" rx="5"/><circle cx="12" cy="12" r="4"/><circle cx="17.2" cy="6.8" r="1"/></svg>
+            </span>
+            <span class="contact-card__label" data-i18n="contact.instagram"></span>
+            <span class="contact-card__value" id="instagramValue"></span>
+          </a>
+
+          <div class="contact-card">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><path d="M12 21s7-6.2 7-11a7 7 0 1 0-14 0c0 4.8 7 11 7 11Z"/><circle cx="12" cy="10" r="2.5"/></svg>
+            </span>
+            <span class="contact-card__label" data-i18n="contact.address"></span>
+            <span class="contact-card__value" id="addressValue"></span>
+            <a class="contact-card__link" id="mapsLink" href="#" target="_blank" rel="noopener" data-i18n="contact.maps"></a>
+          </div>
+
+          <div class="contact-card">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3.5 2"/></svg>
+            </span>
+            <span class="contact-card__label" data-i18n="contact.hours"></span>
+            <span class="contact-card__value" id="hoursValue"></span>
+          </div>
+
+          <a class="contact-card" id="contactEmail" href="#">
+            <span class="contact-card__icon" aria-hidden="true">
+              <svg viewBox="0 0 24 24" width="22" height="22" fill="none" stroke="currentColor" stroke-width="1.6" stroke-linecap="round" stroke-linejoin="round"><rect x="3" y="5" width="18" height="14" rx="2.5"/><path d="m4 7 8 6 8-6"/></svg>
+            </span>
+            <span class="contact-card__label" data-i18n="contact.email"></span>
+            <span class="contact-card__value" id="emailValue"></span>
+          </a>
+        </div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="site-footer">
+    <div class="container footer__inner">
+      <div class="footer__brand">
+        <a class="brand brand--footer" href="#top">
+          <span class="brand__mark" aria-hidden="true">
+            <svg viewBox="0 0 32 32" width="26" height="26" fill="none" stroke="currentColor" stroke-width="1.7" stroke-linecap="round" stroke-linejoin="round">
+              <path d="M4 26V15a12 12 0 0 1 24 0v11"/><path d="M10 26v-9a6 6 0 0 1 12 0v9"/><path d="M2 26h28"/>
+            </svg>
+          </span>
+          <span class="brand__name" id="brandNameFooter">Chez Aida</span>
+        </a>
+        <p data-i18n="footer.tagline"></p>
+      </div>
+
+      <nav class="footer__nav" aria-label="Navigation pied de page" data-i18n-aria-label="footer.links">
+        <a href="#catalogue" data-i18n="nav.catalog"></a>
+        <a href="#a-propos" data-i18n="nav.about"></a>
+        <a href="#contact" data-i18n="nav.contact"></a>
+      </nav>
+
+      <div class="footer__meta">
+        <span class="footer__made" data-i18n="footer.made"></span>
+        <span>© <span id="year"></span> <span id="brandNameCopy">Chez Aida</span>. <span data-i18n="footer.rights"></span></span>
+      </div>
+    </div>
+  </footer>
+
+  <div class="overlay" id="overlay" data-close-cart></div>
+
+  <aside class="drawer" id="cartDrawer" role="dialog" aria-modal="true" aria-labelledby="cartTitle" aria-hidden="true">
+    <div class="drawer__head">
+      <h2 id="cartTitle" data-i18n="cart.title"></h2>
+      <button type="button" class="icon-btn" data-close-cart aria-label="Fermer" data-i18n-aria-label="modal.close">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+    </div>
+
+    <div class="drawer__body" id="cartItems"></div>
+
+    <div class="drawer__foot" id="cartFooter" hidden>
+      <div class="cart-total">
+        <span data-i18n="cart.total"></span>
+        <strong id="cartTotal"></strong>
+      </div>
+      <button type="button" class="btn btn--primary btn--block" id="orderWhatsapp">
+        <svg viewBox="0 0 24 24" width="18" height="18" fill="currentColor" aria-hidden="true"><path d="M12 2a10 10 0 0 0-8.6 15.1L2 22l5-1.3A10 10 0 1 0 12 2Zm0 18a8 8 0 0 1-4.1-1.1l-.3-.2-3 .8.8-2.9-.2-.3A8 8 0 1 1 12 20Zm4.5-5.8c-.2-.1-1.5-.7-1.7-.8-.2-.1-.4-.1-.6.1-.2.2-.6.8-.8 1-.1.2-.3.2-.5.1a6.5 6.5 0 0 1-3.2-2.8c-.2-.4.2-.4.6-1.3.1-.1 0-.3 0-.4l-.8-1.9c-.2-.5-.4-.4-.6-.4h-.5c-.2 0-.4.1-.6.3-.2.2-.8.8-.8 1.9s.8 2.2.9 2.4c.1.1 1.6 2.5 3.9 3.5 1.4.6 2 .7 2.7.6.4-.1 1.5-.6 1.7-1.2.2-.6.2-1.1.1-1.2 0 0-.1-.1-.3-.1Z"/></svg>
+        <span data-i18n="cart.order"></span>
+      </button>
+      <button type="button" class="btn btn--ghost btn--block" id="copyOrder" data-i18n="cart.copy"></button>
+    </div>
+  </aside>
+
+  <div class="modal" id="productModal" aria-hidden="true">
+    <div class="modal__backdrop" data-close-modal></div>
+    <div class="modal__dialog" role="dialog" aria-modal="true" aria-labelledby="modalTitle">
+      <button type="button" class="icon-btn modal__close" data-close-modal aria-label="Fermer" data-i18n-aria-label="modal.close">
+        <svg viewBox="0 0 24 24" width="20" height="20" fill="none" stroke="currentColor" stroke-width="1.8" stroke-linecap="round" aria-hidden="true"><path d="m6 6 12 12M18 6 6 18"/></svg>
+      </button>
+
+      <div class="modal__media">
+        <img id="modalImage" src="" alt="" width="800" height="800">
+      </div>
+
+      <div class="modal__content">
+        <span class="badge" id="modalBadge"></span>
+        <h2 id="modalTitle"></h2>
+        <p class="modal__price" id="modalPrice"></p>
+        <p class="modal__one-size" id="modalOneSizeNote" hidden></p>
+        <p class="modal__desc" id="modalDescription"></p>
+
+        <div class="modal__row">
+          <span class="modal__label" data-i18n="modal.color"></span>
+          <span class="color-pill" id="modalColor"></span>
+        </div>
+
+        <div class="modal__row modal__row--block" id="modalSizeRow">
+          <span class="modal__label"><span data-i18n="modal.size"></span> · <span id="modalSizeHint" data-i18n="modal.chooseSize"></span></span>
+          <div class="size-picker" id="modalSizes" role="group" aria-label="Tailles"></div>
+        </div>
+
+        <div class="modal__row modal__row--inline">
+          <span class="modal__label" data-i18n="modal.qty"></span>
+          <div class="qty" role="group" aria-label="Quantité" data-i18n-aria-label="modal.qty">
+            <button type="button" class="qty__btn" id="modalQtyMinus" aria-label="-">−</button>
+            <span class="qty__value" id="modalQty">1</span>
+            <button type="button" class="qty__btn" id="modalQtyPlus" aria-label="+">+</button>
+          </div>
+        </div>
+
+        <button type="button" class="btn btn--primary btn--block" id="modalAdd" data-i18n="modal.add"></button>
+      </div>
+    </div>
+  </div>
+
+  <div class="toast" id="toast" role="status" aria-live="polite"></div>
+
+  <script src="data/shop.js"></script>
+  <script src="data/products.js"></script>
+  <script src="js/i18n.js"></script>
+  <script src="js/cart.js"></script>
+  <script src="js/app.js"></script>
+</body>
+</html>

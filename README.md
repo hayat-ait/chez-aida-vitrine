@@ -188,9 +188,23 @@ Le site est **déjà en ligne** sur Netlify :
 
 - URL : **<https://chez-aida.netlify.app>**
 - Projet Netlify : `chez-aida`
-- Le déploiement est un envoi de fichiers (pas de build, pas de dépôt Git connecté).
+- Dépôt GitHub connecté : `hayat-ait/chez-aida-vitrine` (branche `main`)
 
-### Mettre à jour le site
+### Mettre à jour le site (déploiement automatique)
+
+Chaque `git push` sur la branche `main` déclenche automatiquement un build Netlify :
+
+```bash
+cd /home/hayat/clients/vitrine
+git add -A
+git commit -m "Mise à jour du site"
+git push
+```
+
+Netlify détecte le commit et redéploie en quelques secondes. Réglages du projet :
+**build command vide** et **publish directory `.`** (défini dans `netlify.toml`).
+
+### Déploiement manuel (secours)
 
 1. Modifier les fichiers du dossier `vitrine/`.
 2. Recréer l'archive :
@@ -200,10 +214,6 @@ Le site est **déjà en ligne** sur Netlify :
    ```
 3. Sur Netlify, ouvrir le projet `chez-aida` → onglet **Deploys** → glisser le ZIP
    (ou le dossier) dans la zone « Drag and drop your site output folder here ».
-4. Le site est mis à jour en quelques secondes.
-
-Alternative : pousser le dossier sur GitHub puis connecter le dépôt au projet Netlify
-pour des mises à jour automatiques.
 
 ### Domaine personnalisé
 
